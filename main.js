@@ -140,3 +140,43 @@ function motionPath() {
 }
 
 motionLink.addEventListener("animationend", motionPath);
+
+// #7 
+const audio = new Audio("./assests/rickrolled.mp3");
+let audioLink = document.querySelector(".audio-link");
+
+let pressedKeys = [];
+
+audioLink.addEventListener("keydown", keysPressed);
+audioLink.addEventListener("blur", stopAudio);
+
+function keysPressed(event) {
+  pressedKeys.push(event.key);
+  console.log(pressedKeys);
+  sequenceCheck();
+}
+
+function sequenceCheck() {
+  if (pressedKeys.includes("5") && pressedKeys.includes("6") && pressedKeys.includes("7") && pressedKeys.includes("8")) {
+    audio.play();
+    refreshPressedKeys();
+  } 
+}
+
+function stopAudio() {
+  audio.pause();
+}
+
+function refreshPressedKeys() {
+  pressedKeys = [];  
+}
+
+
+
+
+
+
+
+// function playAudio() {
+//   audio.play();
+// }

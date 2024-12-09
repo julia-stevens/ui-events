@@ -31,4 +31,4 @@ function flipFkey() {
   flipF.classList.toggle("flip-f");
 }
 
-flipF.addEventListener("animationed", flipFkey);
+flipF.addEventListener("animationend", flipFkey);

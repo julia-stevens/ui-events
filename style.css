@@ -36,6 +36,11 @@ a {
     border-color: var(--primary);
   }
 }
+p {
+  border: var(--line) solid var(--highlight-primary);
+  padding: 0.4em 0.8em;
+  color: var(--primary);
+}
 
 
 /* UI Event Classes */
@@ -81,6 +86,7 @@ a:nth-of-type(12) {
 
 
 /* Hieronder komen jouw animaties */
+/* #1 */
 .flip-f {
   animation: flip-f 0.5s linear both;
 }
@@ -98,4 +104,13 @@ a:nth-of-type(12) {
     transform: translateY(-100%) rotateX(-180deg) scale(1);
     transform-origin: 50% 100%;
   }
+}
+
+/* #2 */
+.log {
+  display: none; 
+}
+
+.log.show {
+  display: block; 
 }

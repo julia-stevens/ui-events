@@ -32,3 +32,24 @@ function flipFkey() {
 }
 
 flipF.addEventListener("animationend", flipFkey);
+
+// #2 Log key
+
+let logLink = document.querySelector("a:nth-of-type(2)");
+let log = document.querySelector(".log");
+
+logLink.addEventListener("focus", showLog);
+logLink.addEventListener("blur", hideLog);
+logLink.addEventListener("keydown", logKey); 
+
+function showLog() {
+  log.classList.add("show");
+}
+
+function hideLog() {
+  log.classList.remove("show");
+}
+
+function logKey(event) {
+  log.textContent += ` ${event.code}`;
+}

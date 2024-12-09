@@ -21,6 +21,8 @@ interaction.addEventListener('animationend', jumpHandler)
 
 // ================================================================================= 
 
+// #1 Flip f-key
+
 let flipF = document.querySelector("a:nth-of-type(1)");
 
 flipF.addEventListener("keydown", flipFkey); 

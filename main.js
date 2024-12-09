@@ -1,7 +1,7 @@
 // Voorbeeld ========================================================================
 
 // Stap 1: selecteer het 12e linkje, en sla deze op in een variabele
-let interaction = document.querySelector('a:nth-of-type(12)')
+let interaction = document.querySelector(".interaction")
 
 // Stap 2: voeg de (click) event listener toe aan de link, met een callback functie
 // In dit geval wordt de jumpHandler functie aangeroepen, zodra je op het linkje klikt
@@ -127,3 +127,16 @@ function drag(event) {
 linkDrag.ondragstart = function() {
   return false;
 };
+
+// #6 Motion path animation 
+let motionPathWrapper = document.querySelector(".motion-path-wrapper");
+let motionLink = document.querySelector(".motion-link");
+
+motionLink.addEventListener("mouseover", motionPath);
+
+function motionPath() {
+  motionPathWrapper.classList.toggle("showMotionPathWrapper");
+  motionLink.classList.toggle("showMotionLink");
+}
+
+motionLink.addEventListener("animationend", motionPath);

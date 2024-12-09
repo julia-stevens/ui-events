@@ -84,3 +84,46 @@ function orbitAnimation() {
 }
 
 developmentLink.addEventListener("animationend", orbitAnimation);
+
+// #5 Drag and drop
+// https://javascript.info/mouse-drag-and-drop
+
+let linkDrag = document.querySelector("a:nth-of-type(4)");
+
+linkDrag.addEventListener("mousedown", drag);
+
+function drag(event) {
+  let shiftX = event.clientX - linkDrag.getBoundingClientRect().left;
+  let shiftY = event.clientY - linkDrag.getBoundingClientRect().top;
+
+  linkDrag.style.position = 'absolute';
+  linkDrag.style.zIndex = 1000;
+  document.body.append(linkDrag);
+
+  moveAt(event.pageX, event.pageY);
+
+  // moves the linkDrag at (pageX, pageY) coordinates
+  // taking initial shifts into account
+  function moveAt(pageX, pageY) {
+    linkDrag.style.left = pageX - shiftX + 'px';
+    linkDrag.style.top = pageY - shiftY + 'px';
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // move the linkDrag on mousemove
+  document.addEventListener('mousemove', onMouseMove);
+
+  // drop the linkDrag, remove unneeded handlers
+  linkDrag.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    linkDrag.onmouseup = null;
+  };
+
+};
+
+linkDrag.ondragstart = function() {
+  return false;
+};

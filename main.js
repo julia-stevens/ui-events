@@ -69,3 +69,18 @@ function zoomLink(event) {
 
   linkZoom.style.transform = `scale(${scale})`;
 }
+
+// #4 Double click
+const orbit = document.querySelector(".orbit");
+const sun = document.querySelector(".sun");
+const developmentLink = document.querySelector(".development");
+
+developmentLink.addEventListener("dblclick", orbitAnimation);
+
+function orbitAnimation() {
+  developmentLink.classList.toggle("showDevelopment");
+  orbit.classList.toggle("showOrbit");
+  sun.classList.toggle("showSun");
+}
+
+developmentLink.addEventListener("animationend", orbitAnimation);

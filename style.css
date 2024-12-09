@@ -115,3 +115,90 @@ a:nth-of-type(12) {
 .log.show {
   display: block; 
 }
+
+/* #4 */
+.orbit.showOrbit {
+  width: 400px;
+  height: 400px; 
+  position: absolute; 
+  top: 10%; 
+  left: 50%; 
+  translate: -50%; 
+}
+
+.development.showDevelopment {
+  position: absolute;
+  top:35%;
+  left:35%;
+  transform:translate(-50%,-50%);
+  height:50px;
+  width:50px;
+  border-radius:100%;
+  background: #FE9C1B;
+  animation: orbit 2 ease-in-out 6s;
+  color: transparent;
+  border: transparent; 
+}
+
+.sun.showSun {
+  position: absolute;
+  background: rgba( 255, 209, 0, 0.7 );
+  backdrop-filter: blur( 3px );
+  height:200px;
+  width:200px;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius: 100%;
+  z-index:2;  
+}
+
+/* @keyframes changeShape {
+  0% {
+    width: 400px;
+  }
+  100% {
+    width: 50px; 
+    color: transparent; 
+  }
+}
+
+@keyframes changeHeight {
+  0% {
+    height: 65.5938px;
+  }
+  100% {
+    height: 50px; 
+  }  
+} */
+
+@keyframes orbit {
+  0%{
+    left:0%;
+    z-index:1;
+    scale:0.7;
+    transform:translate(0%,-50%);
+  }
+  25%{
+    scale:0.3;
+    transform:translate(-100%,-50%);
+  }
+  50%{
+    left:100%;
+    z-index:1;
+    
+  }
+  50.001%{
+    z-index:3;
+    
+  }
+  75%{
+    scale:1;
+  }
+  100%{
+    left:0%;
+    transform:translate(0%,-50%);
+    z-index:3;
+    scale:0.72; 
+  }
+}

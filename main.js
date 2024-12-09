@@ -53,3 +53,20 @@ function hideLog() {
 function logKey(event) {
   log.textContent += ` ${event.code}`;
 }
+
+// #3 Zoom in/out
+let scale = 1; 
+let linkZoom = document.querySelector("a:nth-of-type(3)");
+
+linkZoom.addEventListener("wheel", zoomLink, {passive: false});
+console.log(linkZoom);
+
+function zoomLink(event) {
+  event.preventDefault();
+
+  scale += event.deltaY * -0.01; 
+
+  scale = Math.min(Math.max(0.125, scale), 4);
+
+  linkZoom.style.transform = `scale(${scale})`;
+}

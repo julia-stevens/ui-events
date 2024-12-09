@@ -59,7 +59,6 @@ let scale = 1;
 let linkZoom = document.querySelector("a:nth-of-type(3)");
 
 linkZoom.addEventListener("wheel", zoomLink, {passive: false});
-console.log(linkZoom);
 
 function zoomLink(event) {
   event.preventDefault();

@@ -1,7 +1,4 @@
-/*
-   De eerste interactie is al voor jullie uitgewerkt
-   Als je op het 12e linkje klikt (“Interaction”), springt deze omhoog
-*/
+// Voorbeeld ========================================================================
 
 // Stap 1: selecteer het 12e linkje, en sla deze op in een variabele
 let interaction = document.querySelector('a:nth-of-type(12)')
@@ -22,14 +19,14 @@ function jumpHandler() {
 interaction.addEventListener('animationend', jumpHandler)
 
 
-// Ga zelf verder met de overige elementen, aan de hand van de instructies
-// Maak bijvoorbeeld een bibber animatie als je op iets klikt
+// ================================================================================= 
 
-// Stap 1: querySelector
-// let bibberLink = document.querySelector...
+let flipF = document.querySelector("a:nth-of-type(1)");
 
-// Stap 2: addEventListener
-// bibberLink.addEventListener...
+flipF.addEventListener("keydown", flipFkey); 
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
-// bibberLink.classList.toggle...
+function flipFkey() {
+  flipF.classList.toggle("flip-f");
+}
+
+flipF.addEventListener("animationed", flipFkey);

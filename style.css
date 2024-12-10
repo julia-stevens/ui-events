@@ -51,7 +51,6 @@ em {
 
 /* Jump animation on the interaction link */
 .interaction {
-  position: relative;
   background: var(--highlight-secondary);
   color: var(--secondary);
   border-color: var(--secondary);
@@ -252,4 +251,17 @@ em {
     offset-distance: 100%;
     transform: scale(0.2);
   }
+}
+
+/* #8 */
+canvas {
+  display: block; 
+  z-index: 9999999;
+  margin: auto; 
+  border: var(--line) solid var(--highlight-primary);
+  background-color: #12145b;
+  margin-top: 2rem;
+  width: 80vw; 
+  height: 40vh; 
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✍️</text></svg>") 5 25,auto;
 }

@@ -141,7 +141,7 @@ function motionPath() {
 
 motionLink.addEventListener("animationend", motionPath);
 
-// #7 
+// #7 Key sequence & audio
 const audio = new Audio("./assests/rickrolled.mp3");
 let audioLink = document.querySelector(".audio-link");
 
@@ -171,12 +171,46 @@ function refreshPressedKeys() {
   pressedKeys = [];  
 }
 
+// #8 Draw with cursor
+// const canvas = document.getElementById("canvas");
+// const ctx = canvas.getContext("2d");
+// let coord = { x: 0, y: 0 };
 
+// // Add mouse event listeners
+// document.addEventListener("mousedown", start);
+// document.addEventListener("mouseup", stop);
 
-
-
-
-
-// function playAudio() {
-//   audio.play();
+// function reposition(event) {
+//     // Adjust coordinates relative to the canvas position
+//     const rect = canvas.getBoundingClientRect(); // Get canvas position
+//     coord.x = event.clientX - rect.left;
+//     coord.y = event.clientY - rect.top;
 // }
+
+// function start(event) {
+//     document.addEventListener("mousemove", draw);
+//     reposition(event); // Set initial position
+// }
+
+// function stop() {
+//     document.removeEventListener("mousemove", draw);
+// }
+
+// function draw(event) {
+//     ctx.beginPath();
+//     ctx.lineWidth = 5;
+//     ctx.lineCap = "round";
+//     ctx.strokeStyle = "#9D7AEB"; // Set stroke color
+
+//     ctx.moveTo(coord.x, coord.y); // Start from previous position
+//     reposition(event); // Update to new position
+//     ctx.lineTo(coord.x, coord.y); // Draw a line to the new position
+
+//     ctx.stroke(); // Render the line
+// }
+
+
+
+
+
+

@@ -48,7 +48,9 @@ em {
   color: var(--highlight-secondary);
 }
 /* UI Event Classes */
-
+.inactive {
+  opacity: .5; 
+}
 /* Jump animation on the interaction link */
 .interaction {
   background: var(--highlight-secondary);
@@ -234,12 +236,12 @@ em {
     offset-distance: 0%;
     transform: scale(1);
   }
-  30% {
-    box-shadow: -0.5rem 0 0.3rem var(--color, white);
-  }
-  70% {
-    box-shadow: -0.5rem 0 0.3rem var(--color, white);
-  }
+  /* 30% { */
+    /* box-shadow: -0.5rem 0 0.3rem var(--color, white); */
+  /* } */
+  /* 70% { */
+    /* box-shadow: -0.5rem 0 0.3rem var(--color, white); */
+  /* } */
   90% {
     opacity: 1;
     offset-distance: 100%;
@@ -253,15 +255,3 @@ em {
   }
 }
 
-/* #8 */
-canvas {
-  display: block; 
-  z-index: 9999999;
-  margin: auto; 
-  border: var(--line) solid var(--highlight-primary);
-  background-color: #12145b;
-  margin-top: 2rem;
-  width: 80vw; 
-  height: 40vh; 
-  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✍️</text></svg>") 5 25,auto;
-}

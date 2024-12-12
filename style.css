@@ -281,7 +281,7 @@ em {
   }
 }
 
-/* #10 */
+/* #10 - on click rotate */
 .click-rotate.clicked {
 	animation: rotate-diagonal-1 0.4s linear both;
 }

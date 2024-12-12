@@ -255,3 +255,13 @@ em {
   }
 }
 
+/* #8 */
+.resize-event.resized {
+  filter: invert(1);
+}
+
+.resize-event.resized {
+  filter: invert(1);
+}
+
+

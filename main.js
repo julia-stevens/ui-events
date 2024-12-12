@@ -170,3 +170,15 @@ function refreshPressedKeys() {
 }
 
 // #8 
+let resizeLink = document.querySelector(".resize-event");
+
+window.addEventListener("resize", invertResize);
+
+function invertResize() {
+  if (window.innerWidth <= 800) {
+    resizeLink.classList.add("resized");
+  } else {
+    resizeLink.classList.remove("resized");
+  }
+}
+

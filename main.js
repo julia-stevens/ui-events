@@ -182,3 +182,11 @@ function invertResize() {
   }
 }
 
+// #9
+let pageLoadLink = document.querySelector(".page-load-link");
+
+window.addEventListener("load", onLoadFunc);
+
+function onLoadFunc() {
+  pageLoadLink.classList.add("pageLoaded");
+}

@@ -190,3 +190,12 @@ window.addEventListener("load", onLoadFunc);
 function onLoadFunc() {
   pageLoadLink.classList.add("pageLoaded");
 }
+
+// 10
+let clickLink = document.querySelector(".click-rotate");
+
+clickLink.addEventListener("click", rotateLink);
+
+function rotateLink() {
+  clickLink.classList.toggle("clicked");
+}

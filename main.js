@@ -199,3 +199,55 @@ clickLink.addEventListener("click", rotateLink);
 function rotateLink() {
   clickLink.classList.toggle("clicked");
 }
+
+// 11 - long press voor koop
+let longpressLink = document.querySelector(".longpress");
+let displayTimeElapsed = document.querySelector(".time-elapsed");
+
+let start = 0;
+let timerInterval = null;
+
+longpressLink.addEventListener("mousedown", getTime);
+longpressLink.addEventListener("mousedown", timer);
+longpressLink.addEventListener("mouseup", stopTimer);
+longpressLink.addEventListener("mouseleave", stopTimer);
+
+function getTime() {
+  start = Date.now();
+}
+
+function timer() {
+  timerInterval = setInterval(calculateElapsedTime, 100); // update 
+}
+
+function calculateElapsedTime() {
+  let elapsed = ((Date.now() - start) / 1000).toFixed(1); // bereken verschil tussen start en nu
+  updateDisplay(elapsed);
+}
+
+function updateDisplay(elapsed) {
+  displayTimeElapsed.textContent = `${elapsed} s`;
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
+
+
+// function startTimer() {
+//   start = Date.now();
+//   console.log("start: " + start);
+// }
+
+// function endTimer() {
+//   end = Date.now();
+//   console.log("end: " + end);
+//   elapsed = end - start; 
+//   console.log(elapsed/1000);
+
+//   displayTimeElapsed.innerHTML = elapsed + " s";
+// }
+
+
+
